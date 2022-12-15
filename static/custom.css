@@ -57,13 +57,9 @@ h1 {
 
 /* Атомарные классы */
 .container {
-	width: 1200px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
-
-/*.container.s1 {
-	width: 1000px;
-}*/
 
 .block {
 	margin-top: 200px;
@@ -75,11 +71,6 @@ h1 {
 	width: 100%;
 }
 
-/*.descr {
-	color: #808080;
-	font-size: 18px;
-	font-weight: bold;
-}*/
 .title_area {
 	margin-bottom: 64px;
 }
@@ -142,31 +133,31 @@ nav a {
 }
 
 header {
-	background-color: #CCC;
-	position: relative;
-	height: 623px;
-
+	height: 625px;
+	background: #CCC url(images/header_back.png) no-repeat right bottom;
 }
 header .container {
 	display: flex;
+	flex-direction: column;
+	height: inherit;
+}
+header .row.c1 {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 15px 0;
+}
+header .row.c2 {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 24px;
 }
 header .btn.sign_in {
 	background: url(images/icons/sign_in.png) no-repeat 88px 11px;
 	background-color: #212121;
 	padding: 12px 55px 12px 26px;
-}
-header .main {
-	position: absolute;
-	top: 135px;
-	width: 30%;
-	font-size: 24px;
-}
-header .preview {
-	position: absolute;
-	right: 178px;
-	top: 146px;
 }
 
 #about .container {
@@ -330,21 +321,24 @@ header .preview {
 #houses .row.c5 .btn {
 	flex-grow: 1;
 }
-#houses .like {
-	background: url(images/icons/like.png) no-repeat 0px 0px;
-	padding-right: 48px;
+#houses .item .like {
+	border: 2px solid #212121;
 }
 #houses .item:hover .inner{
 	background-color: #212121;
 	color: #FFF;
 }
-#houses .item:hover .btn, #houses .item:hover .like {
+#houses .item:hover .btn {
 	background-color: #FFF;
 	color: #212121;
 }
+#houses .item:hover .icon {
+	fill: #FFF;
+}
 
-#houses .item:hover .inner img {
-	filter: invert(1);
+#houses .item:hover .like {
+	fill: #212121;
+	border: 2px solid #FFF;
 }
 
 #blog .wrap {
@@ -359,12 +353,12 @@ header .preview {
 #blog .inner {
 	padding: 24px;
 }
-#blog .item .inner .row.c1 {
+#blog .row.c1 {
 	font-size: 18px;
 	color: #808080;
 
 }
-#blog .item .inner .row.c2 {
+#blog .row.c2 {
 	font-size: 24px;
 	font-weight: bold;
 	color: #212121;
@@ -375,11 +369,11 @@ header .preview {
 	margin-top: 10px;
 	box-sizing: border-box;
 }
-#blog .item:hover {
+#blog .container .wrap .item:hover {
 	color: #FFF;
 	background-color: #212121;
 }
-#blog .item:hover .row.c2, #blog .item:hover .row.c1 {
+#blog .item:hover .row.c2 {
 	color: #FFF;
 }
 #blog .item:hover .btn {
@@ -398,6 +392,33 @@ header .preview {
 	padding: 32px;
 	background-color: #FFF;
 	font-size: 18px;
+}
+#reviews .inner {
+	display: flex;
+}
+#reviews .preview {
+	border-radius: 50%;
+	width: 100%;
+	max-width: 48px;
+	margin-right: 12px;
+}
+#reviews p {
+	margin-top: 0px;
+	line-height: 25px;
+	margin-bottom: 17px;
+}
+#reviews .col {
+	line-height: 25px;
+	font-weight: 800;
+}
+#reviews .col .rating_area {
+	font-weight: 500;
+	font-size: 14px;
+}
+#reviews .item {
+	background: url(images/reviews/laps.jpg) no-repeat;
+	background-position-x: 94%;
+	background-position-y: 80%;
 }
 
 #staff .wrap {
@@ -591,3 +612,25 @@ footer .item .title {
 	padding: 0 0px 7px 10px;
 	letter-spacing: 19px;
 }
+
+/* Адаптив */
+@media all and (max-width: 1200px) {
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	#about .container {
+		flex-direction: column;
+	}
+	#about .col.c2 {
+		text-align: center;
+	}
+}
+@media all and (max-width: 768px) {
+	.bimg768 {
+		display: block;
+		width: 100%;
+	}
+}
+
