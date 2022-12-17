@@ -335,7 +335,6 @@ header .btn.sign_in {
 #houses .item:hover .icon {
 	fill: #FFF;
 }
-
 #houses .item:hover .like {
 	fill: #212121;
 	border: 2px solid #FFF;
@@ -504,19 +503,17 @@ header .btn.sign_in {
 	flex-direction: column;
 	font-size: 14px;
 }
-#get_in_touch .field{
-	padding: 20px 23px;
-	margin: 6px 0 14px 0;
+#get_in_touch .field {
+	padding: 19px 10px 21px 21px;
+	margin: 6px 0 12px 0;
 	border: 2px solid #212121;
 	box-sizing: border-box;
 	font-size: 18px;
 	font-family: Gilroy;
 }
-#get_in_touch .wrap img {
-	filter: brightness(10) invert(1);
-}
+
 #touch_submit {
-	margin-top: 27px;
+	margin-top: 40px;
 	width: 100%;
 	padding: 13px 0px 18px 0px;
 	font-size: 24px;
@@ -528,11 +525,38 @@ header .btn.sign_in {
 #get_in_touch .contact {
 	width: 50%;
 }
+#get_in_touch .socnet {
+	display: flex;
+
+}
+#get_in_touch .socnet .item {
+	padding: 15px 5px 8px 14px;
+	border: 2px solid #212121;
+	min-width: 25px;
+	margin-right: 16px;
+}
+#get_in_touch .socnet .item:hover{
+	fill: #FFF;
+	border: 2px solid #FFF;
+	background-color: #212121;
+}
+#get_in_touch .socnet .item:hover .icon {
+	fill: #FFF;
+}
 #get_in_touch p {
 	font-size: 18px;
 	padding-top: 3.3px;
 	line-height: 1.4;
 	margin-bottom: 64px;
+}
+#get_in_touch .wrap {
+	font-size: 24px;
+	margin-top: 40px;
+	line-height: 40px;
+}
+
+#touch_message {
+	resize: none;
 }
 
 #subscribe .title_area.s1 {
@@ -586,6 +610,23 @@ footer .container {
 }
 footer .item {
 	width: 25%;
+}
+footer .socnet {
+	display: flex;
+}
+footer .socnet .item {
+	padding: 8px 5px 8px 5px;
+	border: 2px solid #FFF;
+	margin-right: 15px;
+	width: 10%;
+	text-align: center;
+}
+footer .socnet .item:hover {
+	border: 2px solid #FFF;
+	background-color: #FFF;
+}
+footer .socnet .item:hover .icon {
+	fill: #212121;
 }
 footer h3 {
 	font-size: 24px;
