@@ -111,13 +111,26 @@ h1 {
 }
 .btn.s2 {
 	font-size: 24px;
-	/* width: 179px; */
-	/* height: 64px; */
-	/* margin: 40px auto; */
 	padding: 17px 32px;
-	/* text-align: center; */
-	/* box-sizing: border-box; */
-	/* display: block; */
+}
+
+.tab-area .tab-page .tab-item {
+	display: none;
+}
+.tab-area .tab-item.active {
+	display: block;
+	color: blue; /* удалить */
+}
+/* Побочное, для вида */
+.tab-area .tab-label {
+	display: flex;
+	margin-bottom: 10px;
+}
+.tab-area .tab-label .tab-item {
+	padding: 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	margin-right: 5px;
 }
 
 /* Основные стили */
@@ -185,7 +198,8 @@ header .btn.sign_in {
 	justify-content: space-evenly;
 	text-align: center;
 	padding: 64px 0;
-	width: 996px;
+	flex-wrap: wrap;
+	gap: 15px;
 }
 #digits .digit {
 	color: #FFF;
@@ -243,12 +257,22 @@ header .btn.sign_in {
 	filter: brightness(10) invert(1);
 }
 
-#process .container{
+#process .container {
 	display: flex;
-	justify-content: space-between;
+	gap: 80px;
+	justify-content: center;
+}
+#process .col {
+	width: 100%;
+}
+#process .col.c1 {
+	max-width: 510px;
+}
+#process .col.c2 {
+	flex-grow: 1;
 }
 #process .item {
-	margin-top: 64px;
+	margin-top: 44px;
 	display: flex;
 	gap: 25px;
 }
@@ -264,7 +288,7 @@ header .btn.sign_in {
 }
 #process .title_desc {
 	width: 492px;
-	height: 96px;
+/*	height: 96px;*/
 }
 #process p {
 	color: #808080;
@@ -364,7 +388,6 @@ header .btn.sign_in {
 }
 #blog .wrap .btn {
 	width: 100%;
-	max-width: 336px;
 	margin-top: 10px;
 	box-sizing: border-box;
 }
@@ -380,13 +403,13 @@ header .btn.sign_in {
 	color: #212121;
 }
 
-#reviews .wrap {
+/*#reviews .wrap {
 	display: flex;
 	justify-content: space-between;
 	gap: 24px;
-}
+}*/
 #reviews .wrap .item {
-	width: 50%;
+	/*width: 50%;*/
 	border: 1px solid #CCC;
 	padding: 32px;
 	background-color: #FFF;
@@ -468,22 +491,27 @@ header .btn.sign_in {
 	justify-content: space-between;
 	gap: 78px;
 }
-#faq .row {
+#faq .item {
 	display: flex;
-	gap: 78px;
 	border-bottom: 1px solid #CCC;
+	flex-direction: column;
 }
-#faq p {
+#faq .hidden_area {
+	display: none;
 	color: #808080;
 	font-size: 16px;
 	line-height: 24px;
 	margin-bottom: 24px;
 	margin-top: 16px;
 }
-#faq .row h2 {
+#faq .item.active .hidden_area {
+	display: block;
+}
+#faq .click {
 	font-size: 18px;
 	margin-top: 24px;
 	margin-bottom: 16px;/*24px*/
+	cursor: pointer;
 }
 
 #get_in_touch .container {
@@ -521,9 +549,6 @@ header .btn.sign_in {
 }
 #get_in_touch .title_area {
 	margin-bottom: 24px;
-}
-#get_in_touch .contact {
-	width: 50%;
 }
 #get_in_touch .socnet {
 	display: flex;
@@ -566,7 +591,7 @@ header .btn.sign_in {
 	font-size: 18px;
 	font-weight: 500;
 	color: #808080;
-	width: 582px;
+	width: 55%;
 	text-align: center;
 	margin: 27px auto 64px auto;
 	line-height: 1.4;
@@ -577,7 +602,7 @@ header .btn.sign_in {
 	margin: 24px auto;
 	max-width: 792px;
 }
-#subscribe .fild_email {
+#subscribe .field_email {
 	width: 100%;
 	border: 2px solid #212121;
 	font-size: 18px;
@@ -618,7 +643,7 @@ footer .socnet .item {
 	padding: 8px 5px 8px 5px;
 	border: 2px solid #FFF;
 	margin-right: 15px;
-	width: 10%;
+	width: 30px;
 	text-align: center;
 }
 footer .socnet .item:hover {
@@ -655,10 +680,18 @@ footer .item .title {
 }
 
 /* Адаптив */
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1230px) {
+	.bimg123 {
+		display: block;
+		width: 100%;
+	}
 	.container {
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+
+	nav {
+		gap: 30px;
 	}
 
 	#about .container {
@@ -667,11 +700,194 @@ footer .item .title {
 	#about .col.c2 {
 		text-align: center;
 	}
+
+	#process .container {
+		gap: 15px;
+	}
+	#process .col {
+		width: 45%;
+	}
+
+	#faq .container {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	#faq .col.c2 {
+		text-align: center;
+		width: 100%;
+	}
+
 }
+
+@media all and (max-width: 920px) {
+	.no920 {
+		display: none;
+	}
+	#process .container {
+		flex-wrap: wrap; 
+	}
+	#process .col {
+		width: 100%;
+	}
+	#process .col.c1 {
+		order: 2;
+	}
+
+	#get_in_touch .container {
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+	#get_in_touch .col.c1 {
+		order: 2;
+	}
+
+	#staff .wrap {
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	#staff .item {
+		width: 40%;
+	}
+
+	.hamburger {
+		cursor: pointer;
+		order: 2;
+	}
+	.hamburger > div {
+		width: 50px;
+		height: 5px;
+		background-color: #212121;
+		margin-bottom: 10px;
+	}
+	.hamburger > div:last-child {
+		margin-bottom: 0;
+	}
+}
+
 @media all and (max-width: 768px) {
 	.bimg768 {
 		display: block;
 		width: 100%;
 	}
+
+	#digits .item {
+		width: 45%;
+	}
+	#service .wrap {
+		flex-wrap: wrap;
+	}
+	#service .item {
+		width: 100%;
+	}
+
+	#houses .wrap {
+		flex-wrap: wrap;
+	}
+	#houses .item {
+		width: 100%;
+	}
+
+	#blog .wrap {
+		flex-wrap: wrap;
+	}
+	#blog .item {
+		width: 100%;
+	}
+
+	#reviews .wrap {
+		flex-wrap: wrap;
+	}
+	#reviews .wrap .item {
+		width: 100%;
+	}
+
+	#staff .item {
+		width: 100%;
+	}
+
+	#subscribe p {
+		width: 100%;
+	}
+	#get_in_touch .col.c2 {
+		width: 80%;
+	}
+
+	footer .container {
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+	}
+	footer .item {
+		width: 80%;
+		margin-bottom: 10px;
+	}
+
+
 }
 
+@media all and (max-width: 480px) {
+	.no480 {
+		display: none;
+	}
+
+	header .row.c1 {
+		flex-direction: column;
+		gap: 15px;
+		align-items: flex-start;
+	}
+	
+	.hamburger {
+		position: absolute;
+		right: 25px;
+		top: 25px;
+	}
+
+	#digits .item {
+		width: 100%;
+	}
+
+	#process .item {
+		margin-top: 20px;
+	}
+
+	#houses .inner {
+		padding: 10px;
+	}
+	#houses .row.c4 > span {
+		display: inline-block;
+		margin: 5px 5px 5px 0;
+	}
+
+	#blog .row.c1 > span {
+		display: inline-block;
+	}
+
+	#reviews .item {
+		background: none;
+	}
+
+	#staff .wrap {
+		flex-wrap: wrap;
+	}
+	#staff .item {
+		width: 100%;
+	}
+
+	#subscribe #subscribe_form .btn {
+		transform: translate(0, 65%);
+		padding: 10px 10px 10px 10px;
+	}
+	#subscribe .field_email {
+		padding: 35px;
+	}
+	#subscribe #subscribe_form .btn {
+		position: unset;
+		width: 100%;
+	}
+
+	footer .item {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slick slider</title>
+<link rel="stylesheet" href="slick.css">
+<link rel="stylesheet" href="slick-theme.css">
+</head>
+<body>
+
+<a href="https://kenwheeler.github.io/slick/">Документация</a>
+<a href="https://github.com/kenwheeler/slick">Репозиторий</a>
+
+<div class="slick-slider">
+	<div>Слайд 1</div>
+	<div>Слайд 2</div>
+	<div>Слайд 3</div>
+</div>
+
+<script src="../jquery.js"></script>
+<script src="slick.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('.slick-slider').slick({
+	    slidesToShow: 2,
+	    slidesToScroll: 1,
+	    speed: 300,
+	    autoplay: true,
+	    arrows: true,
+	    dots: true,
+	    fade: true,
+	    pauseOnHover: true,
+		responsive: [
+			{
+				breakpoint: 970,
+				settings: {
+					slidesToShow: 3
+				}
+
+			}
+	    ],
+
+	});
+});
+</script>
+
+</body>
+</html>
