@@ -124,14 +124,59 @@ h1 {
 /* Побочное, для вида */
 .tab-area .tab-label {
 	display: flex;
-	margin-bottom: 10px;
+	background-color: white;
+	width: 22%;
+	padding: 16px;
+	gap: 8px;
+	justify-content: space-between;
 }
 .tab-area .tab-label .tab-item {
-	padding: 5px;
-	border: 1px solid #ccc;
+	padding: 15px;
 	cursor: pointer;
 	margin-right: 5px;
+	background-color: white;
+	width: 33.33%;
+	text-align: center;
+	font-size: 18px;
+	color: #808080;
+	font-weight: 600;
 }
+.tab-label .tab-item:hover {
+	background: #212121;
+	color: #FFF;
+}
+.tab-page .wrap {
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	padding: 32px;
+	align-items: center;
+}
+.tab-item .item{
+	display: flex;
+	gap: 16px;
+}
+.tab-item .col.c2 {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.tab-item .col.c2 label {
+	font-size: 18px;
+	color: #808080;
+} 
+.tab-item .col.c2 span {
+	font-size: 24px;
+	color: #212121;
+	font-weight: 600;
+} 
+
+.tab-page .item.c5 {
+	background-color: black;
+	padding: 23px 25px;
+	box-sizing: border-box;
+}
+
 
 /* Основные стили */
 nav {
@@ -172,6 +217,7 @@ header .btn.sign_in {
 	background-color: #212121;
 	padding: 12px 55px 12px 26px;
 }
+
 
 #about .container {
 	display: flex;
@@ -288,7 +334,6 @@ header .btn.sign_in {
 }
 #process .title_desc {
 	width: 492px;
-/*	height: 96px;*/
 }
 #process p {
 	color: #808080;
@@ -409,7 +454,7 @@ header .btn.sign_in {
 	gap: 24px;
 }*/
 #reviews .wrap .item {
-	/*width: 50%;*/
+	box-sizing: border-box;
 	border: 1px solid #CCC;
 	padding: 32px;
 	background-color: #FFF;

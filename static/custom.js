@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	// Reviews slider
 	$('#reviews_slider').slick({
-	    slidesToShow: 2,
+	    slidesToShow: 1,
 	    slidesToScroll: 1,
 	    speed: 300,
 	    autoplay: true,
